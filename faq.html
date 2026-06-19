@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preguntas frecuentes · yoinvito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: #faf8f5; color: #2a2522; -webkit-font-smoothing: antialiased; }
+
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; border-bottom: 0.5px solid #e2dcd6; background: #faf8f5; }
+    .nav-logo span { font-weight: 200; font-size: 20px; letter-spacing: -0.02em; }
+    .nav-logo strong { font-weight: 400; font-size: 20px; letter-spacing: -0.02em; }
+    .nav-logo-tag { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; display: block; margin-top: 2px; }
+    .nav-back { font-size: 12px; letter-spacing: 0.1em; color: #8a7e72; text-decoration: none; }
+
+    .faq-hero { background: #2a2522; padding: 3.5rem 2.5rem; text-align: center; }
+    .faq-eyebrow { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #8a7e72; margin-bottom: 1rem; display: block; }
+    .faq-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 38px; color: #faf8f5; line-height: 1.2; }
+
+    .faq-body { max-width: 680px; margin: 0 auto; }
+
+    .faq-category { border-bottom: 0.5px solid #e2dcd6; }
+    .faq-cat-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 2.5rem; background: #fff; }
+    .faq-cat-icon { font-size: 16px; color: #b8a898; }
+    .faq-cat-title { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #2a2522; font-weight: 400; }
+
+    .faq-item { border-top: 0.5px solid #e2dcd6; }
+    .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1.1rem 2.5rem 1.1rem 4rem; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 14px; color: #2a2522; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .faq-question:hover { background: #f5f2ee; }
+    .faq-q-text { text-align: left; line-height: 1.5; }
+    .faq-arrow { font-size: 18px; color: #b8a898; flex-shrink: 0; transition: transform 0.2s; display: inline-block; }
+    .faq-arrow.open { transform: rotate(180deg); }
+    .faq-answer { display: none; padding: 0 2.5rem 1.5rem 4rem; font-size: 13px; color: #4a423c; line-height: 1.9; }
+    .faq-answer.open { display: block; }
+    .faq-answer strong { font-weight: 400; color: #2a2522; }
+
+    .faq-footer { padding: 3.5rem 2.5rem; text-align: center; border-top: 0.5px solid #e2dcd6; }
+    .faq-footer p { font-size: 14px; color: #8a7e72; margin-bottom: 1.25rem; line-height: 1.8; }
+    .faq-cta { display: inline-block; background: #2a2522; color: #faf8f5; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.75rem 2rem; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .nav { padding: 1rem 1.25rem; }
+      .faq-hero { padding: 2.5rem 1.5rem; }
+      .faq-cat-header { padding: 1.25rem 1.5rem; }
+      .faq-question { padding: 1rem 1.5rem 1rem 1.5rem; }
+      .faq-answer { padding: 0 1.5rem 1.25rem 1.5rem; }
+      .faq-footer { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div>
+      <div class="nav-logo"><span>yo</span><strong>invito</strong></div>
+      <span class="nav-logo-tag">invitaciones digitales</span>
+    </div>
+    <a class="nav-back" href="index.html">← Volver</a>
+  </nav>
+
+  <div class="faq-hero">
+    <span class="faq-eyebrow">Antes de empezar</span>
+    <h1 class="faq-title">Lo que necesitás saber</h1>
+  </div>
+
+  <div class="faq-body">
+
+    <div class="faq-category">
+      <div class="faq-cat-header">
+        <span class="faq-cat-icon">📷</span>
+        <span class="faq-cat-title">Fotos</span>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Cuántas fotos puedo incluir?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Depende del paquete. <strong>Invitación:</strong> hasta 3 fotos de portada. <strong>Celebración:</strong> hasta 3 de portada más una galería de hasta 12 imágenes. Si necesitás más, lo conversamos con un pequeño costo adicional.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Qué tamaño y formato tienen que tener?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <strong>Mínimo 1 MB por foto.</strong> Formato JPG o PNG. Orientación preferida: vertical para fotos de personas, horizontal para lugares y salones. <strong>No aceptamos capturas de pantalla ni fotos de fotos.</strong>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Las fotos se retocan?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Hacemos ajustes básicos de luminosidad y contraste para que encajen con el estilo de la invitación. <strong>No realizamos retoques de personas.</strong> Ese servicio puede cotizarse aparte si lo necesitás.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Cómo te envío las fotos?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Por Google Drive o WeTransfer. <strong>No aceptamos fotos por WhatsApp</strong> — la compresión automática destruye la calidad. Te enviamos un link de carga cuando confirmás el pedido.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-header">
+        <span class="faq-cat-icon">🎵</span>
+        <span class="faq-cat-title">Música</span>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Puedo poner música en la invitación?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Sí, pero solo en el paquete <strong>Celebración</strong>. La música suena de fondo al abrir la invitación, con opción de silenciar.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Puedo elegir cualquier canción?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Podés sugerir la canción que quieras. <strong>Usamos versiones libres de derechos</strong> para evitar que los navegadores bloqueen el audio por copyright. Si tenés una canción muy específica, te avisamos si es viable antes de arrancar.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-header">
+        <span class="faq-cat-icon">⏱</span>
+        <span class="faq-cat-title">Tiempos y entrega</span>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿En cuánto tiempo tengo lista la invitación?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <strong>48 horas hábiles</strong> desde que recibimos todos los datos y materiales completos. El reloj empieza cuando tenemos todo — no cuando confirmás el pedido.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Puedo pedir urgente?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Sí, con un recargo del <strong>30%</strong> entregamos en 24 horas hábiles, sujeto a disponibilidad. Consultá antes de abonar.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Cuántas revisiones están incluidas?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <strong>Dos revisiones</strong> incluidas en todos los paquetes. Una revisión = un conjunto de cambios enviados en un solo mensaje. Cambios adicionales se cobran a <strong>USD 10 por ronda.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-header">
+        <span class="faq-cat-icon">✏️</span>
+        <span class="faq-cat-title">Cambios y actualizaciones</span>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Qué pasa si cambia el salón o el horario?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          En el paquete <strong>Celebración</strong> están incluidas 2 actualizaciones de datos. En <strong>Aviso e Invitación</strong>, cada cambio post-entrega tiene un costo de <strong>USD 15.</strong>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Puedo cambiar el diseño después de aprobarlo?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Una vez aprobada y publicada la invitación, <strong>no se realizan cambios de diseño.</strong> Solo se actualizan datos concretos. Si necesitás un rediseño completo, se trata como un trabajo nuevo.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-header">
+        <span class="faq-cat-icon">🌐</span>
+        <span class="faq-cat-title">Vigencia y dominio</span>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Qué pasa cuando vence la vigencia?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          La invitación se da de baja automáticamente. Podés extender la vigencia por <strong>USD 10 cada 30 días adicionales.</strong>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Qué URL recibo?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          En los paquetes Aviso e Invitación recibís una URL del tipo <strong>tuevent.yoinvito.ar.</strong> En el paquete Celebración podés tener tu propio dominio personalizado, incluido en el precio.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-header">
+        <span class="faq-cat-icon">💰</span>
+        <span class="faq-cat-title">Pago y facturación</span>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Cómo se paga?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <strong>100% por adelantado</strong> antes de empezar el trabajo. Aceptamos transferencia bancaria, Mercado Pago y efectivo. Los precios están en dólares — podés pagar en pesos al tipo de cambio MEP del día del pago.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Hacen facturas?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          Sí. Emitimos factura electrónica en pesos. Si necesitás factura en dólares para empresa, consultanos antes de abonar.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">¿Hacen devoluciones?</span>
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          No realizamos devoluciones una vez iniciado el trabajo. Si el evento se cancela antes de que empecemos, devolvemos el <strong>80% del monto abonado.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-footer">
+      <p>¿Tenés una pregunta que no está acá?<br>Escribinos y te respondemos en el día.</p>
+      <a class="faq-cta" href="https://wa.me/5491144456452?text=Hola!+Tengo+una+consulta+sobre+yoinvito" target="_blank" rel="noopener">Consultá por WhatsApp</a>
+    </div>
+
+  </div>
+
+  <script>
+    function toggle(btn) {
+      const answer = btn.nextElementSibling;
+      const arrow = btn.querySelector('.faq-arrow');
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-arrow.open').forEach(a => a.classList.remove('open'));
+      if (!isOpen) { answer.classList.add('open'); arrow.classList.add('open'); }
+    }
+  </script>
+
+</body>
+</html>

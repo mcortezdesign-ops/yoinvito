@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boda Valentina &amp; Martín · yoinvito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: #faf8f5; color: #2a2522; -webkit-font-smoothing: antialiased; }
+
+    .wrap { max-width: 480px; margin: 0 auto; padding-bottom: 3rem; }
+
+    .paq-badge { text-align: center; padding: 1.25rem; background: #faf8f5; border-bottom: 0.5px solid #e2dcd6; }
+    .paq-badge span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 12px; color: #a08878; border: 0.5px solid #e2dcd6; }
+
+    .hero { position: relative; overflow: hidden; min-height: 420px; display: flex; align-items: flex-end; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,15,12,0.90) 0%, rgba(20,15,12,0.3) 55%, rgba(20,15,12,0.08) 100%); }
+    .hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; width: 100%; text-align: center; }
+    .eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #a08878; margin-bottom: 1rem; display: block; }
+    .hero-names { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 50px; line-height: 1.1; color: #faf8f5; }
+    .hero-amp { color: #c8a878; display: block; font-size: 30px; margin: 0.2rem 0; }
+    .ornament { width: 32px; height: 0.5px; background: #6a504a; margin: 1.5rem auto; display: block; }
+    .date-line { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #a08878; }
+
+    .countdown { display: flex; justify-content: center; gap: 1.5rem; padding: 2.5rem 2rem; background: #fff; border-bottom: 0.5px solid #e2dcd6; }
+    .count-unit { text-align: center; }
+    .count-num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 42px; color: #2a2522; display: block; line-height: 1; }
+    .count-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #b8a898; display: block; margin-top: 4px; }
+    .count-sep { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #e2dcd6; align-self: flex-start; padding-top: 6px; }
+
+    .section { padding: 2.25rem 2rem; border-bottom: 0.5px solid #e2dcd6; text-align: center; background: #fff; }
+    .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; margin-bottom: 0.75rem; display: block; }
+    .section p { font-size: 15px; line-height: 1.8; color: #4a423c; }
+    .section strong { font-weight: 400; color: #2a2522; }
+
+    .link-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1rem; padding: 0.6rem 1.5rem; border: 0.5px solid #2a2522; background: transparent; color: #2a2522; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; }
+
+    .program { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; max-width: 260px; margin-left: auto; margin-right: auto; text-align: left; }
+    .prog-row { display: flex; gap: 1rem; align-items: flex-start; }
+    .prog-time { font-size: 11px; letter-spacing: 0.1em; color: #b8a898; min-width: 45px; padding-top: 2px; }
+    .prog-event { font-size: 14px; color: #2a2522; }
+
+    .dress { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .dress-item { text-align: center; }
+    .dress-swatch { width: 32px; height: 32px; border-radius: 50%; margin: 0 auto 0.4rem; }
+    .dress-name { font-size: 11px; color: #4a423c; }
+
+    .confirm-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 1.25rem; padding: 0.75rem 2rem; background: #2a2522; color: #faf8f5; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.1em; text-decoration: none; }
+
+    .yi-footer { text-align: center; padding: 1.75rem; font-size: 11px; color: #b8a898; letter-spacing: 0.1em; }
+    .yi-footer a { color: #b8a898; text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="paq-badge"><span>Paquete Invitación · Boda</span></div>
+
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=480&q=80&auto=format&fit=crop" alt="Valentina y Martín" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Nos casamos</span>
+      <div class="hero-names">Valentina<span class="hero-amp">&</span>Martín</div>
+      <span class="ornament"></span>
+      <p class="date-line">Sábado · 14 de febrero de 2026 · Buenos Aires</p>
+    </div>
+  </div>
+
+  <div class="countdown">
+    <div class="count-unit"><span class="count-num" id="cd-d">00</span><span class="count-label">días</span></div>
+    <span class="count-sep">·</span>
+    <div class="count-unit"><span class="count-num" id="cd-h">00</span><span class="count-label">horas</span></div>
+    <span class="count-sep">·</span>
+    <div class="count-unit"><span class="count-num" id="cd-m">00</span><span class="count-label">min</span></div>
+    <span class="count-sep">·</span>
+    <div class="count-unit"><span class="count-num" id="cd-s">00</span><span class="count-label">seg</span></div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">La ceremonia</span>
+    <p><strong>Iglesia Nuestra Señora del Pilar</strong><br>Junín 1904, Recoleta · 18:30 hs</p>
+    <a class="link-btn" href="https://maps.google.com/?q=Iglesia+Nuestra+Señora+del+Pilar+Buenos+Aires" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver ubicación
+    </a>
+  </div>
+
+  <div class="section">
+    <span class="section-label">La fiesta</span>
+    <p><strong>Palacio Sans Souci</strong><br>Av. del Libertador 1902, Palermo · 21:00 hs</p>
+    <a class="link-btn" href="https://maps.google.com/?q=Palacio+Sans+Souci+Buenos+Aires" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver ubicación
+    </a>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Programa</span>
+    <div class="program">
+      <div class="prog-row"><span class="prog-time">18:30</span><span class="prog-event">Ceremonia religiosa</span></div>
+      <div class="prog-row"><span class="prog-time">20:30</span><span class="prog-event">Cóctel de bienvenida</span></div>
+      <div class="prog-row"><span class="prog-time">21:30</span><span class="prog-event">Cena y baile</span></div>
+      <div class="prog-row"><span class="prog-time">01:00</span><span class="prog-event">Torta y brindis</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Dress code</span>
+    <p style="font-size:14px; color:#4a423c; margin-bottom:0;">Formal · Colores sugeridos</p>
+    <div class="dress">
+      <div class="dress-item"><div class="dress-swatch" style="background:#c8b9a8; border:0.5px solid #b8a898;"></div><span class="dress-name">Champagne</span></div>
+      <div class="dress-item"><div class="dress-swatch" style="background:#8c9ba8; border:0.5px solid #7a8a98;"></div><span class="dress-name">Pizarra</span></div>
+      <div class="dress-item"><div class="dress-swatch" style="background:#d4c5b0; border:0.5px solid #c4b5a0;"></div><span class="dress-name">Arena</span></div>
+      <div class="dress-item"><div class="dress-swatch" style="background:#4a423c; border:0.5px solid #3a3230;"></div><span class="dress-name">Noche</span></div>
+    </div>
+  </div>
+
+  <div class="section" style="border-bottom:none;">
+    <span class="section-label">Confirmá tu asistencia</span>
+    <p style="font-size:14px; color:#8a7e72;">Antes del <strong>31 de enero</strong></p>
+    <a class="confirm-btn" href="https://wa.me/5491144456452?text=Confirmo+mi+asistencia+a+la+boda+de+Valentina+y+Martín" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      Confirmar por WhatsApp
+    </a>
+  </div>
+
+  <div class="yi-footer"><a href="../index.html">yoinvito.ar</a> · invitaciones digitales</div>
+
+</div>
+<script>
+  function tick() {
+    const diff = new Date('2026-02-14T18:30:00-03:00') - new Date();
+    if (diff <= 0) return;
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>

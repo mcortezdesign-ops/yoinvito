@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yoinvito · invitaciones digitales</title>
+  <meta name="description" content="Invitaciones digitales para todos tus eventos. Bodas, cumpleaños, quinceaños, corporativos. Con mapa, cuenta regresiva y confirmación por WhatsApp. Listas en 48 horas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      background: #faf8f5;
+      color: #2a2522;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 0.5px solid #e2dcd6;
+      background: #faf8f5;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo-text { font-size: 22px; letter-spacing: -0.02em; line-height: 1; }
+    .nav-logo-text span { font-weight: 200; }
+    .nav-logo-text strong { font-weight: 400; }
+    .nav-logo-tag { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; display: block; margin-top: 2px; }
+    .nav-cta {
+      background: #2a2522; color: #faf8f5;
+      font-family: 'Jost', sans-serif; font-weight: 300;
+      font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.55rem 1.25rem; border: none; cursor: pointer;
+      text-decoration: none; display: inline-block;
+    }
+
+    /* HERO */
+    .hero {
+      background: #2a2522; color: #e8e0d5;
+      padding: 6rem 2.5rem 5rem; text-align: center;
+    }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #8a7e72; margin-bottom: 1.5rem; }
+    .hero-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(42px, 8vw, 64px); line-height: 1.1; color: #faf8f5; margin-bottom: 1.5rem; }
+    .hero-sub { font-size: 15px; color: #8a7e72; line-height: 1.9; max-width: 460px; margin: 0 auto 2.5rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #faf8f5; color: #2a2522; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.75rem 2rem; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-ghost { background: transparent; color: #e8e0d5; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.75rem 2rem; border: 0.5px solid #4a423c; cursor: pointer; text-decoration: none; display: inline-block; }
+
+    /* EVENTOS */
+    .eventos { background: #fff; padding: 2.5rem 2.5rem; border-bottom: 0.5px solid #e2dcd6; text-align: center; }
+    .section-label { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #b8a898; margin-bottom: 1rem; display: block; }
+    .eventos-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+    .evento-pill { font-size: 12px; letter-spacing: 0.08em; padding: 0.4rem 1rem; border: 0.5px solid #e2dcd6; color: #4a423c; background: #faf8f5; }
+
+    /* COMO FUNCIONA */
+    .como { padding: 5rem 2.5rem; text-align: center; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(28px, 5vw, 38px); color: #2a2522; margin-bottom: 0.75rem; line-height: 1.2; }
+    .section-sub { font-size: 14px; color: #8a7e72; max-width: 440px; margin: 0 auto 3.5rem; line-height: 1.9; }
+    .pasos { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2.5rem; max-width: 680px; margin: 0 auto; }
+    .paso { text-align: center; }
+    .paso-num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 56px; color: #e2dcd6; display: block; line-height: 1; margin-bottom: 0.75rem; }
+    .paso-title { font-size: 14px; font-weight: 400; color: #2a2522; margin-bottom: 0.4rem; }
+    .paso-desc { font-size: 13px; color: #8a7e72; line-height: 1.7; }
+
+    .sep { height: 0.5px; background: #e2dcd6; }
+
+    /* EJEMPLOS */
+    .ejemplos { padding: 5rem 2.5rem; text-align: center; }
+    .ejemplos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #e2dcd6; border: 0.5px solid #e2dcd6; max-width: 780px; margin: 0 auto; }
+    .ejemplo-card { background: #faf8f5; padding: 2.5rem 2rem; text-align: center; }
+    .ejemplo-tipo { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; display: block; margin-bottom: 1rem; }
+    .ejemplo-evento { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 26px; color: #2a2522; margin-bottom: 0.5rem; line-height: 1.2; }
+    .ejemplo-paquete { font-size: 11px; letter-spacing: 0.1em; color: #8a7e72; display: block; margin-bottom: 1.5rem; }
+    .ejemplo-link { display: inline-block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.55rem 1.25rem; border: 0.5px solid #2a2522; color: #2a2522; text-decoration: none; }
+    .ejemplo-link:hover { background: #2a2522; color: #faf8f5; }
+
+    /* PAQUETES */
+    .paquetes { padding: 0; }
+    .paquetes-header { padding: 5rem 2.5rem 3rem; text-align: center; }
+    .paquetes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #e2dcd6; border-top: 0.5px solid #e2dcd6; border-bottom: 0.5px solid #e2dcd6; }
+    .paquete { background: #faf8f5; padding: 2.5rem 2rem; text-align: center; }
+    .paquete.featured { background: #2a2522; }
+    .paq-name { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; display: block; margin-bottom: 1.25rem; }
+    .paquete.featured .paq-name { color: #6a6058; }
+    .paq-price { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 48px; color: #2a2522; line-height: 1; }
+    .paquete.featured .paq-price { color: #faf8f5; }
+    .paq-currency { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 18px; color: #b8a898; vertical-align: super; }
+    .paquete.featured .paq-currency { color: #6a6058; }
+    .paq-divider { height: 0.5px; background: #e2dcd6; margin: 1.5rem 0; }
+    .paquete.featured .paq-divider { background: #3a3230; }
+    .paq-items { list-style: none; text-align: left; }
+    .paq-items li { font-size: 13px; color: #4a423c; padding: 0.4rem 0; border-bottom: 0.5px solid #f0ece8; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+    .paquete.featured .paq-items li { color: #a09088; border-bottom-color: #3a3230; }
+    .paq-items li::before { content: '—'; color: #c8b8a8; font-size: 10px; flex-shrink: 0; padding-top: 3px; }
+    .paquete.featured .paq-items li::before { color: #4a423c; }
+    .paq-vigencia { font-size: 11px; color: #b8a898; display: block; margin-top: 1rem; letter-spacing: 0.05em; }
+    .paquete.featured .paq-vigencia { color: #6a6058; }
+    .paq-btn { display: block; margin-top: 1.5rem; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.65rem 1rem; border: 0.5px solid #2a2522; background: transparent; color: #2a2522; text-decoration: none; text-align: center; }
+    .paquete.featured .paq-btn { border-color: #6a6058; color: #e8e0d5; }
+    .paq-btn:hover { background: #2a2522; color: #faf8f5; }
+    .paquete.featured .paq-btn:hover { background: #4a423c; }
+
+    /* EXTRAS */
+    .extras { padding: 3rem 2.5rem; background: #fff; border-top: 0.5px solid #e2dcd6; }
+    .extras-title { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #b8a898; text-align: center; margin-bottom: 1.5rem; }
+    .extras-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .extra-item { font-size: 12px; color: #4a423c; padding: 0.4rem 1rem; border: 0.5px solid #e2dcd6; background: #faf8f5; }
+
+    /* FAQ LINK */
+    .faq-link-strip { padding: 2rem 2.5rem; text-align: center; border-top: 0.5px solid #e2dcd6; }
+    .faq-link-strip p { font-size: 14px; color: #8a7e72; margin-bottom: 1rem; }
+    .faq-link-strip a { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #2a2522; text-decoration: none; border-bottom: 0.5px solid #2a2522; padding-bottom: 2px; }
+
+    /* CTA STRIP */
+    .cta-strip { background: #2a2522; padding: 5rem 2.5rem; text-align: center; }
+    .cta-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(30px, 5vw, 42px); color: #faf8f5; margin-bottom: 1rem; line-height: 1.2; }
+    .cta-sub { font-size: 14px; color: #8a7e72; margin-bottom: 2rem; line-height: 1.9; }
+
+    /* FOOTER */
+    footer { padding: 2rem 2.5rem; border-top: 0.5px solid #e2dcd6; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo span { font-weight: 200; font-size: 18px; }
+    .footer-logo strong { font-weight: 400; font-size: 18px; }
+    .footer-copy { font-size: 11px; color: #b8a898; letter-spacing: 0.05em; }
+
+    @media (max-width: 600px) {
+      .nav { padding: 1rem 1.25rem; }
+      .hero { padding: 4rem 1.5rem 3.5rem; }
+      .como, .ejemplos, .paquetes-header { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .extras { padding: 2.5rem 1.5rem; }
+      footer { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div>
+      <div class="nav-logo-text"><span>yo</span><strong>invito</strong></div>
+      <span class="nav-logo-tag">invitaciones digitales</span>
+    </div>
+    <a class="nav-cta" href="https://wa.me/5491144456452?text=Hola!+Quiero+info+sobre+yoinvito" target="_blank" rel="noopener">Consultá</a>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Invitaciones que se comparten en un link</p>
+    <h1 class="hero-h1">Tu evento merece<br>más que un flyer</h1>
+    <p class="hero-sub">Creamos tu invitación digital con mapa, cuenta regresiva y confirmación de asistencia. Lista en 48 horas.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/5491144456452?text=Hola!+Quiero+mi+invitación+digital" target="_blank" rel="noopener">Quiero la mía</a>
+      <a class="btn-ghost" href="#ejemplos">Ver ejemplos</a>
+    </div>
+  </section>
+
+  <div class="eventos">
+    <span class="section-label">Para todo tipo de eventos</span>
+    <div class="eventos-grid">
+      <span class="evento-pill">Bodas</span>
+      <span class="evento-pill">Cumpleaños</span>
+      <span class="evento-pill">Quinceaños</span>
+      <span class="evento-pill">Corporativos</span>
+      <span class="evento-pill">Graduaciones</span>
+      <span class="evento-pill">Bautismos</span>
+      <span class="evento-pill">Baby showers</span>
+      <span class="evento-pill">Aniversarios</span>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <section class="como">
+    <span class="section-label">Cómo funciona</span>
+    <h2 class="section-title">Tres pasos, una invitación</h2>
+    <p class="section-sub">Sin vueltas. Nos mandás los datos, nosotros hacemos el resto.</p>
+    <div class="pasos">
+      <div class="paso">
+        <span class="paso-num">1</span>
+        <p class="paso-title">Elegís el paquete</p>
+        <p class="paso-desc">Aviso, Invitación o Celebración. Según tu evento y presupuesto.</p>
+      </div>
+      <div class="paso">
+        <span class="paso-num">2</span>
+        <p class="paso-title">Nos mandás los datos</p>
+        <p class="paso-desc">Fecha, lugar, fotos y cualquier detalle que quieras incluir.</p>
+      </div>
+      <div class="paso">
+        <span class="paso-num">3</span>
+        <p class="paso-title">Recibís tu link</p>
+        <p class="paso-desc">En 48 hs tenés tu invitación lista para compartir por WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <section class="ejemplos" id="ejemplos">
+    <span class="section-label">Ejemplos reales</span>
+    <h2 class="section-title">Mirá cómo queda</h2>
+    <p class="section-sub">Cada paquete tiene su propio nivel de detalle. Hacé click para verlo completo.</p>
+    <div class="ejemplos-grid">
+      <div class="ejemplo-card">
+        <span class="ejemplo-tipo">Cumpleaños</span>
+        <div class="ejemplo-evento">Roberto<br>cumple 50</div>
+        <span class="ejemplo-paquete">Paquete Aviso · USD 35</span>
+        <a class="ejemplo-link" href="ejemplos/aviso.html" target="_blank">Ver ejemplo</a>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-tipo">Boda</span>
+        <div class="ejemplo-evento">Valentina<br>&amp; Martín</div>
+        <span class="ejemplo-paquete">Paquete Invitación · USD 70</span>
+        <a class="ejemplo-link" href="ejemplos/invitacion.html" target="_blank">Ver ejemplo</a>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-tipo">Quinceaños</span>
+        <div class="ejemplo-evento">Los 15 de<br>Valentina</div>
+        <span class="ejemplo-paquete">Paquete Celebración · USD 130</span>
+        <a class="ejemplo-link" href="ejemplos/celebracion.html" target="_blank">Ver ejemplo</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <section class="paquetes" id="paquetes">
+    <div class="paquetes-header">
+      <span class="section-label">Paquetes</span>
+      <h2 class="section-title">Elegí el tuyo</h2>
+      <p class="section-sub">Precios en dólares. Podés pagar en pesos al cambio MEP del día.</p>
+    </div>
+    <div class="paquetes-grid">
+      <div class="paquete">
+        <span class="paq-name">Aviso</span>
+        <div class="paq-price"><span class="paq-currency">USD </span>35</div>
+        <div class="paq-divider"></div>
+        <ul class="paq-items">
+          <li>Datos del evento</li>
+          <li>Mapa interactivo</li>
+          <li>Botón WhatsApp</li>
+          <li>45 días online</li>
+        </ul>
+        <span class="paq-vigencia">45 días online</span>
+        <a class="paq-btn" href="https://wa.me/5491144456452?text=Quiero+el+paquete+Aviso" target="_blank" rel="noopener">Lo quiero</a>
+      </div>
+      <div class="paquete featured">
+        <span class="paq-name">Invitación</span>
+        <div class="paq-price"><span class="paq-currency">USD </span>70</div>
+        <div class="paq-divider"></div>
+        <ul class="paq-items">
+          <li>Todo lo del Aviso</li>
+          <li>Foto principal</li>
+          <li>Cuenta regresiva</li>
+          <li>Programa del evento</li>
+          <li>Dress code</li>
+        </ul>
+        <span class="paq-vigencia">90 días online</span>
+        <a class="paq-btn" href="https://wa.me/5491144456452?text=Quiero+el+paquete+Invitación" target="_blank" rel="noopener">Lo quiero</a>
+      </div>
+      <div class="paquete">
+        <span class="paq-name">Celebración</span>
+        <div class="paq-price"><span class="paq-currency">USD </span>130</div>
+        <div class="paq-divider"></div>
+        <ul class="paq-items">
+          <li>Todo lo de Invitación</li>
+          <li>Galería de fotos</li>
+          <li>Música de fondo</li>
+          <li>Dominio propio</li>
+          <li>2 actualizaciones</li>
+        </ul>
+        <span class="paq-vigencia">6 meses online</span>
+        <a class="paq-btn" href="https://wa.me/5491144456452?text=Quiero+el+paquete+Celebración" target="_blank" rel="noopener">Lo quiero</a>
+      </div>
+    </div>
+    <div class="extras">
+      <p class="extras-title">Servicios adicionales</p>
+      <div class="extras-grid">
+        <span class="extra-item">Cambio de datos post-entrega · USD 15</span>
+        <span class="extra-item">Extensión 30 días · USD 10</span>
+        <span class="extra-item">Entrega urgente 24 hs · +30%</span>
+        <span class="extra-item">Versión en inglés · USD 20</span>
+      </div>
+    </div>
+    <div class="faq-link-strip">
+      <p>¿Tenés dudas sobre qué incluye cada paquete?</p>
+      <a href="faq.html" target="_blank">Ver preguntas frecuentes</a>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <h2 class="cta-title">¿Tenés un evento próximo?</h2>
+    <p class="cta-sub">Hablemos. En una consulta rápida definimos qué necesitás.</p>
+    <a class="btn-primary" href="https://wa.me/5491144456452?text=Hola!+Quiero+info+sobre+yoinvito" target="_blank" rel="noopener">Consultá por WhatsApp</a>
+  </section>
+
+  <footer>
+    <div class="footer-logo"><span>yo</span><strong>invito</strong></div>
+    <span class="footer-copy">yoinvito.ar · invitaciones digitales</span>
+  </footer>
+
+</body>
+</html>

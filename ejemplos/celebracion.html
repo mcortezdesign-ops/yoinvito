@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los 15 de Valentina · yoinvito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: #faf7f4; color: #2a2522; -webkit-font-smoothing: antialiased; }
+
+    .wrap { max-width: 480px; margin: 0 auto; padding-bottom: 3rem; }
+
+    .paq-badge { text-align: center; padding: 1.25rem; background: #faf7f4; border-bottom: 0.5px solid #e8e0d8; }
+    .paq-badge span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 12px; color: #a08878; border: 0.5px solid #e0d8d0; }
+
+    .domain-bar { text-align: center; padding: 0.85rem; background: #f0eaf8; border-bottom: 0.5px solid #e0d0ec; font-size: 11px; letter-spacing: 0.15em; color: #6a4888; }
+
+    .hero { position: relative; overflow: hidden; min-height: 420px; display: flex; align-items: flex-end; background: #1a1228; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,18,40,0.94) 0%, rgba(26,18,40,0.38) 55%, rgba(26,18,40,0.08) 100%); }
+    .hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; width: 100%; text-align: center; }
+    .eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #8a7898; margin-bottom: 1rem; display: block; }
+    .hero-number { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 90px; line-height: 1; color: #c8a878; display: block; margin-bottom: 0.25rem; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 36px; color: #f0e8f8; }
+    .ornament { width: 32px; height: 0.5px; background: #4a3858; margin: 1.5rem auto; display: block; }
+    .date-line { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #8a7898; }
+
+    .countdown { display: flex; justify-content: center; gap: 1.5rem; padding: 2.5rem 2rem; background: #fff; border-bottom: 0.5px solid #e8e0d8; }
+    .count-unit { text-align: center; }
+    .count-num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 42px; color: #1a1228; display: block; line-height: 1; }
+    .count-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #b8a898; display: block; margin-top: 4px; }
+    .count-sep { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #e0d0e8; align-self: flex-start; padding-top: 6px; }
+
+    .section { padding: 2.25rem 2rem; border-bottom: 0.5px solid #e8e0d8; text-align: center; background: #fff; }
+    .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; margin-bottom: 0.75rem; display: block; }
+    .section p { font-size: 15px; line-height: 1.8; color: #4a423c; }
+    .section strong { font-weight: 400; color: #2a2522; }
+
+    .link-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1rem; padding: 0.6rem 1.5rem; border: 0.5px solid #1a1228; background: transparent; color: #1a1228; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; }
+
+    .program { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; max-width: 260px; margin-left: auto; margin-right: auto; text-align: left; }
+    .prog-row { display: flex; gap: 1rem; align-items: flex-start; }
+    .prog-time { font-size: 11px; letter-spacing: 0.1em; color: #b8a898; min-width: 45px; padding-top: 2px; }
+    .prog-event { font-size: 14px; color: #2a2522; }
+
+    .gallery { padding: 2.25rem 2rem; border-bottom: 0.5px solid #e8e0d8; background: #fff; }
+    .gallery-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; margin-bottom: 1rem; text-align: center; display: block; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+
+    .dress { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .dress-item { text-align: center; }
+    .dress-swatch { width: 32px; height: 32px; border-radius: 50%; margin: 0 auto 0.4rem; }
+    .dress-name { font-size: 11px; color: #4a423c; }
+
+    .music-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 0.75rem; }
+
+    .confirm-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 1.25rem; padding: 0.75rem 2rem; background: #1a1228; color: #f0e8f8; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.1em; text-decoration: none; }
+
+    .yi-footer { text-align: center; padding: 1.75rem; font-size: 11px; color: #b8a898; letter-spacing: 0.1em; }
+    .yi-footer a { color: #b8a898; text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="paq-badge"><span>Paquete Celebración · Quinceaños</span></div>
+  <div class="domain-bar">🌐 mis15.valentinatorres.com.ar</div>
+
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=480&q=80&auto=format&fit=crop" alt="Valentina Torres, sus 15 años" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Mis quince años</span>
+      <span class="hero-number">15</span>
+      <div class="hero-name">Valentina Torres</div>
+      <span class="ornament"></span>
+      <p class="date-line">Viernes · 18 de octubre · 21:00 hs</p>
+    </div>
+  </div>
+
+  <div class="countdown">
+    <div class="count-unit"><span class="count-num" id="cd-d">00</span><span class="count-label">días</span></div>
+    <span class="count-sep">·</span>
+    <div class="count-unit"><span class="count-num" id="cd-h">00</span><span class="count-label">horas</span></div>
+    <span class="count-sep">·</span>
+    <div class="count-unit"><span class="count-num" id="cd-m">00</span><span class="count-label">min</span></div>
+    <span class="count-sep">·</span>
+    <div class="count-unit"><span class="count-num" id="cd-s">00</span><span class="count-label">seg</span></div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">El lugar</span>
+    <p><strong>Salón Versailles</strong><br>Av. del Libertador 4500, Palermo<br>Acceso por Coronel Díaz</p>
+    <a class="link-btn" href="https://maps.google.com/?q=Av+del+Libertador+4500+Buenos+Aires" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver ubicación
+    </a>
+  </div>
+
+  <div class="section">
+    <span class="section-label">La noche</span>
+    <div class="program">
+      <div class="prog-row"><span class="prog-time">21:00</span><span class="prog-event">Recepción y cóctel</span></div>
+      <div class="prog-row"><span class="prog-time">22:00</span><span class="prog-event">Ceremonia de vals</span></div>
+      <div class="prog-row"><span class="prog-time">22:30</span><span class="prog-event">Cena y baile</span></div>
+      <div class="prog-row"><span class="prog-time">00:30</span><span class="prog-event">Torta y sorpresa</span></div>
+      <div class="prog-row"><span class="prog-time">01:00</span><span class="prog-event">Pista libre hasta el amanecer</span></div>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <span class="gallery-label">Galería</span>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=200&q=70&auto=format&fit=crop" alt="Valentina" />
+      <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=200&q=70&auto=format&fit=crop" alt="Valentina 2" />
+      <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=200&q=70&auto=format&fit=crop" alt="Flores" />
+      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=200&q=70&auto=format&fit=crop" alt="Detalle" />
+      <img src="https://images.unsplash.com/photo-1562967915-6ba607ff7d05?w=200&q=70&auto=format&fit=crop" alt="Salón" />
+      <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=200&q=70&auto=format&fit=crop" alt="Torta" />
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Dress code</span>
+    <p style="font-size:14px; color:#4a423c; margin-bottom:0;">Formal · Paleta de colores</p>
+    <div class="dress">
+      <div class="dress-item"><div class="dress-swatch" style="background:#c8a0d0; border:0.5px solid #b890c0;"></div><span class="dress-name">Lila</span></div>
+      <div class="dress-item"><div class="dress-swatch" style="background:#f0e0f8; border:0.5px solid #d8c8e8;"></div><span class="dress-name">Malva</span></div>
+      <div class="dress-item"><div class="dress-swatch" style="background:#e8d8a8; border:0.5px solid #d8c898;"></div><span class="dress-name">Champagne</span></div>
+      <div class="dress-item"><div class="dress-swatch" style="background:#1a1228; border:0.5px solid #2a2238;"></div><span class="dress-name">Noche</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Música</span>
+    <div class="music-row">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a7898" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      <span style="font-size:14px; font-style:italic; font-family:'Cormorant Garamond', serif; color:#4a423c;">Perfect · Ed Sheeran</span>
+    </div>
+  </div>
+
+  <div class="section" style="border-bottom:none;">
+    <span class="section-label">Confirmá tu asistencia</span>
+    <p style="font-size:14px; color:#8a7e72;">Antes del <strong>1 de octubre</strong></p>
+    <a class="confirm-btn" href="https://wa.me/5491144456452?text=Confirmo+mi+asistencia+a+los+15+de+Valentina+Torres" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      Confirmar por WhatsApp
+    </a>
+  </div>
+
+  <div class="yi-footer">mis15.valentinatorres.com.ar · <a href="../index.html">yoinvito.ar</a></div>
+
+</div>
+<script>
+  function tick() {
+    const diff = new Date('2026-10-18T21:00:00-03:00') - new Date();
+    if (diff <= 0) return;
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
