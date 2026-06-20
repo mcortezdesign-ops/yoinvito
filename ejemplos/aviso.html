@@ -6,31 +6,34 @@
   <title>Cumpleaños Roberto · yoinvito</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Jost', sans-serif; font-weight: 300; background: #f5f0eb; color: #2a2522; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Jost', sans-serif; font-weight: 400; background: #f5f0eb; color: #2a2522; -webkit-font-smoothing: antialiased; }
 
     .wrap { max-width: 480px; margin: 0 auto; padding-bottom: 3rem; }
 
     .paq-badge { text-align: center; padding: 1.25rem; background: #f5f0eb; border-bottom: 0.5px solid #e0d8d0; }
     .paq-badge span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 12px; color: #a08878; border: 0.5px solid #e0d8d0; }
 
-    .hero { background: #3b2f2a; padding: 5rem 2rem 4rem; text-align: center; }
+    .hero { position: relative; overflow: hidden; min-height: 360px; display: flex; align-items: flex-end; background: #3b2f2a; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,22,18,0.92) 0%, rgba(30,22,18,0.35) 55%, rgba(30,22,18,0.1) 100%); }
+    .hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; width: 100%; text-align: center; }
     .eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #a08878; margin-bottom: 1.5rem; display: block; }
-    .hero-number { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 110px; line-height: 1; color: #f5f0eb; display: block; margin-bottom: 0.25rem; }
-    .hero-name { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 34px; color: #c8b0a0; letter-spacing: 0.05em; }
+    .hero-number { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 110px; line-height: 1; color: #f5f0eb; display: block; margin-bottom: 0.25rem; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 34px; color: #c8b0a0; letter-spacing: 0.05em; }
     .ornament { width: 32px; height: 0.5px; background: #6a504a; margin: 1.75rem auto; display: block; }
     .date-line { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #a08878; }
 
     .section { padding: 2.25rem 2rem; border-bottom: 0.5px solid #e0d8d0; text-align: center; background: #fff; }
-    .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; margin-bottom: 0.75rem; display: block; }
-    .section p { font-size: 15px; line-height: 1.8; color: #4a423c; }
+    .section-label { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; margin-bottom: 0.75rem; display: block; }
+    .section p { font-size: 17px; line-height: 1.8; color: #4a423c; }
     .section strong { font-weight: 400; color: #2a2522; }
 
-    .map-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1rem; padding: 0.6rem 1.5rem; border: 0.5px solid #3b2f2a; background: transparent; color: #3b2f2a; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; }
+    .map-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1rem; padding: 0.6rem 1.5rem; border: 0.5px solid #3b2f2a; background: transparent; color: #3b2f2a; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; }
 
-    .confirm-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 1.25rem; padding: 0.75rem 2rem; background: #3b2f2a; color: #f5f0eb; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.1em; text-decoration: none; }
+    .confirm-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 1.25rem; padding: 0.75rem 2rem; background: #3b2f2a; color: #f5f0eb; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.1em; text-decoration: none; }
 
     .yi-footer { text-align: center; padding: 1.75rem; font-size: 11px; color: #b8a898; letter-spacing: 0.1em; background: #f5f0eb; }
     .yi-footer a { color: #b8a898; text-decoration: none; }
@@ -42,11 +45,15 @@
   <div class="paq-badge"><span>Paquete Aviso</span></div>
 
   <div class="hero">
-    <span class="eyebrow">Cumpleaños</span>
-    <span class="hero-number">50</span>
-    <div class="hero-name">Roberto Suárez</div>
-    <span class="ornament"></span>
-    <p class="date-line">Sábado · 12 de julio · 21:00 hs</p>
+    <img src="https://images.unsplash.com/photo-1542327897-d73f4005b533?w=480&q=80&auto=format&fit=crop" alt="Roberto Suárez" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Cumpleaños</span>
+      <span class="hero-number">50</span>
+      <div class="hero-name">Roberto Suárez</div>
+      <span class="ornament"></span>
+      <p class="date-line">Sábado · 12 de julio · 21:00 hs</p>
+    </div>
   </div>
 
   <div class="section">

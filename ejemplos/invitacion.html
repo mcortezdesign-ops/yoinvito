@@ -6,10 +6,10 @@
   <title>Boda Valentina &amp; Martín · yoinvito</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Jost', sans-serif; font-weight: 300; background: #faf8f5; color: #2a2522; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Jost', sans-serif; font-weight: 400; background: #faf8f5; color: #2a2522; -webkit-font-smoothing: antialiased; }
 
     .wrap { max-width: 480px; margin: 0 auto; padding-bottom: 3rem; }
 
@@ -21,35 +21,51 @@
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,15,12,0.90) 0%, rgba(20,15,12,0.3) 55%, rgba(20,15,12,0.08) 100%); }
     .hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; width: 100%; text-align: center; }
     .eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #a08878; margin-bottom: 1rem; display: block; }
-    .hero-names { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 50px; line-height: 1.1; color: #faf8f5; }
+    .hero-names { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 50px; line-height: 1.1; color: #faf8f5; }
     .hero-amp { color: #c8a878; display: block; font-size: 30px; margin: 0.2rem 0; }
     .ornament { width: 32px; height: 0.5px; background: #6a504a; margin: 1.5rem auto; display: block; }
     .date-line { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #a08878; }
 
     .countdown { display: flex; justify-content: center; gap: 1.5rem; padding: 2.5rem 2rem; background: #fff; border-bottom: 0.5px solid #e2dcd6; }
     .count-unit { text-align: center; }
-    .count-num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 42px; color: #2a2522; display: block; line-height: 1; }
+    .count-num { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 42px; color: #2a2522; display: block; line-height: 1; }
     .count-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #b8a898; display: block; margin-top: 4px; }
     .count-sep { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #e2dcd6; align-self: flex-start; padding-top: 6px; }
 
     .section { padding: 2.25rem 2rem; border-bottom: 0.5px solid #e2dcd6; text-align: center; background: #fff; }
     .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; margin-bottom: 0.75rem; display: block; }
-    .section p { font-size: 15px; line-height: 1.8; color: #4a423c; }
+    .section p { font-size: 17px; line-height: 1.8; color: #4a423c; }
     .section strong { font-weight: 400; color: #2a2522; }
 
-    .link-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1rem; padding: 0.6rem 1.5rem; border: 0.5px solid #2a2522; background: transparent; color: #2a2522; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; }
+    .link-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1rem; padding: 0.6rem 1.5rem; border: 0.5px solid #2a2522; background: transparent; color: #2a2522; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; }
 
     .program { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; max-width: 260px; margin-left: auto; margin-right: auto; text-align: left; }
     .prog-row { display: flex; gap: 1rem; align-items: flex-start; }
     .prog-time { font-size: 11px; letter-spacing: 0.1em; color: #b8a898; min-width: 45px; padding-top: 2px; }
-    .prog-event { font-size: 14px; color: #2a2522; }
+    .prog-event { font-size: 15px; color: #2a2522; }
 
     .dress { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
     .dress-item { text-align: center; }
     .dress-swatch { width: 32px; height: 32px; border-radius: 50%; margin: 0 auto 0.4rem; }
     .dress-name { font-size: 11px; color: #4a423c; }
 
-    .confirm-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 1.25rem; padding: 0.75rem 2rem; background: #2a2522; color: #faf8f5; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.1em; text-decoration: none; }
+    .gallery { padding: 2.25rem 2rem; border-bottom: 0.5px solid #e2dcd6; background: #fff; }
+    .gallery-label { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8a898; margin-bottom: 1rem; text-align: center; display: block; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+
+    .details-block { border-bottom: 0.5px solid #e2dcd6; background: #fff; }
+    .details-header { padding: 2.25rem 2rem 0.5rem; text-align: center; }
+    .details-item { border-top: 0.5px solid #e2dcd6; }
+    .details-q { width: 100%; text-align: left; background: none; border: none; padding: 1.15rem 2rem; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 16px; color: #2a2522; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; text-align: center; }
+    .details-q:hover { background: #f5f2ee; }
+    .details-arrow { font-size: 14px; color: #b8a898; transition: transform 0.2s; }
+    .details-arrow.open { transform: rotate(180deg); }
+    .details-a { display: none; padding: 0 2rem 1.5rem; font-size: 15px; color: #4a423c; line-height: 1.8; text-align: center; }
+    .details-a.open { display: block; }
+    .details-a strong { font-weight: 500; color: #2a2522; }
+
+    .confirm-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 1.25rem; padding: 0.75rem 2rem; background: #2a2522; color: #faf8f5; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.1em; text-decoration: none; }
 
     .yi-footer { text-align: center; padding: 1.75rem; font-size: 11px; color: #b8a898; letter-spacing: 0.1em; }
     .yi-footer a { color: #b8a898; text-decoration: none; }
@@ -109,14 +125,50 @@
     </div>
   </div>
 
+  <div class="gallery">
+    <span class="gallery-label">Galería</span>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=200&q=70&auto=format&fit=crop" alt="Manos con anillos" />
+      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=200&q=70&auto=format&fit=crop" alt="Pareja" />
+      <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=200&q=70&auto=format&fit=crop" alt="Detalle" />
+      <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=200&q=70&auto=format&fit=crop" alt="Ceremonia" />
+      <img src="https://images.unsplash.com/photo-1521543387232-86e9b4f8f5cb?w=200&q=70&auto=format&fit=crop" alt="Ramo" />
+      <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=200&q=70&auto=format&fit=crop" alt="Detalle floral" />
+    </div>
+  </div>
+
   <div class="section">
     <span class="section-label">Dress code</span>
-    <p style="font-size:14px; color:#4a423c; margin-bottom:0;">Formal · Colores sugeridos</p>
+    <p style="font-size:17px; color:#4a423c; margin-bottom:0;">Formal · Colores sugeridos</p>
     <div class="dress">
       <div class="dress-item"><div class="dress-swatch" style="background:#c8b9a8; border:0.5px solid #b8a898;"></div><span class="dress-name">Champagne</span></div>
       <div class="dress-item"><div class="dress-swatch" style="background:#8c9ba8; border:0.5px solid #7a8a98;"></div><span class="dress-name">Pizarra</span></div>
       <div class="dress-item"><div class="dress-swatch" style="background:#d4c5b0; border:0.5px solid #c4b5a0;"></div><span class="dress-name">Arena</span></div>
       <div class="dress-item"><div class="dress-swatch" style="background:#4a423c; border:0.5px solid #3a3230;"></div><span class="dress-name">Noche</span></div>
+    </div>
+  </div>
+
+  <div class="details-block">
+    <div class="details-header">
+      <span class="section-label">Detalles</span>
+    </div>
+
+    <div class="details-item">
+      <button class="details-q" onclick="toggleDetail(this)">
+        Regalo <span class="details-arrow">⌄</span>
+      </button>
+      <div class="details-a">
+        Tu presencia es el regalo más importante. Si querés tener un gesto con nosotros, vamos a estar muy agradecidos con un aporte para nuestra luna de miel. Te dejamos el alias acá: <strong>valenymartin.boda</strong>
+      </div>
+    </div>
+
+    <div class="details-item">
+      <button class="details-q" onclick="toggleDetail(this)">
+        Niños <span class="details-arrow">⌄</span>
+      </button>
+      <div class="details-a">
+        Queremos que disfruten la fiesta tanto como nosotros — por eso será un evento <strong>solo para adultos</strong>. Sabemos que a veces es difícil organizarse, ¡gracias por entendernos!
+      </div>
     </div>
   </div>
 
@@ -146,6 +198,15 @@
     document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
   }
   tick(); setInterval(tick, 1000);
+
+  function toggleDetail(btn) {
+    const answer = btn.nextElementSibling;
+    const arrow = btn.querySelector('.details-arrow');
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.details-a.open').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.details-arrow.open').forEach(a => a.classList.remove('open'));
+    if (!isOpen) { answer.classList.add('open'); arrow.classList.add('open'); }
+  }
 </script>
 </body>
 </html>
